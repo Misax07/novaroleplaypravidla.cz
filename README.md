@@ -1,1 +1,0 @@
-# novaroleplaypravidla.cz
