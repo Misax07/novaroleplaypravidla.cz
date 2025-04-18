@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA ROLEPLAY PRAVIDLA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            background-image: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-item:hover {
+            background-color: #2d2d2d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        .rule-section {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+            opacity: 0.9;
+            border: 1px solid transparent;
+        }
+        
+        .rule-section:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            border-color: #4f46e5;
+        }
+        
+        h2 {
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #9333ea);
+            transition: width 0.4s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        .container {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(31, 41, 55, 0.9);
+        }
+        
+        footer {
+            background: linear-gradient(to right, #1f2937, #111827);
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9333ea;
+        }
+        
+        /* Text selection */
+        ::selection {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-right: 1rem;
+            filter: drop-shadow(0 0 8px rgba(72, 187, 120, 0.5));
+        }
+        
+        .site-title {
+            background: linear-gradient(to right, #4ade80, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(72, 187, 120, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 p-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">NOVA RP</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="space-x-4">
+                    <a href="#zakladni" class="nav-item px-3 py-2 rounded">Základní pravidla</a>
+                    <a href="#prikazy" class="nav-item px-3 py-2 rounded">Herní příkazy</a>
+                    <a href="#combat" class="nav-item px-3 py-2 rounded">Combat pravidla</a>
+                    <a href="#special" class="nav-item px-3 py-2 rounded">Speciální pravidla</a>
+                    <a href="#frakcni" class="nav-item px-3 py-2 rounded">Frakční pravidla</a>
+                    <a href="#discord" class="nav-item px-3 py-2 rounded">Discord pravidla</a>
+                </div>
+                <a href="https://discord.gg/trhuq4qdN4" target="_blank" class="discord-btn bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300 transform hover:scale-105">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    Připojit se na Discord
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-24 px-4">
+        <section id="zakladni" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Základní pravidla</h2>
+            <div class="grid gap-6">
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">IC/OOC Pravidla</h3>
+                    <ul class="space-y-4">
+                        <li><strong>IC (In Character)</strong> - Komunikace, které se týkají hraní postavy a jejího příběhu. Vše, co se děje v rámci roleplaye a hry.</li>
+                        <li><strong>OOC (Out Of Character)</strong> - Komunikace, která není součástí hraní role. Vše, co se týká skutečného světa.</li>
+                        <li><strong>Mixing</strong> - Zákaz používání informací z OOC v IC situacích, včetně vztahů mezi hráči mimo RP.</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Metagaming</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz použití informací získaných mimo RP (OOC) ve hře (IC)</li>
+                        <li>Zákaz stream snipingu a využívání informací ze streamů</li>
+                        <li>Zákaz telekomunikace během RP (např. Discord hovory)</li>
+                        <li>Zákaz přenášení informací mezi postavami (multichar)</li>
+                        <li>Zákaz poznávání hráčů podle hlasu</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Fear RP</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Hood Fear</strong> - Respekt vůči členům hoodu, projevování strachu</li>
+                        <li><strong>Animal Fear</strong> - Strach z neznámých zvířat a K-9 jednotek</li>
+                        <li><strong>Jail Fear</strong> - Obavy z následků vězení</li>
+                        <li><strong>Cop Fear</strong> - Respekt a strach z policistů a ozbrojených složek</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Passive RP</h3>
+                    <p>Ve městě je mnoho pasivních postav (NPC). Nejvyšší koncentrace je v centru města, budovách, dílnách a turistických oblastech.</p>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Další základní pravidla</h3>
+                    <ul class="space-y-4">
+                        <li><strong>AssPulling</strong> - Zákaz vytahování větších předmětů z inventáře nebo pomocí animací bez RP (dlouhé zbraně se nevztahují)</li>
+                        <li><strong>Cop Baiting</strong> - Zákaz úmyslného provokování PD/SD (např. driftování před hlídkou, jízda dokola kolem stanice)</li>
+                        <li><strong>FailRP</strong> - Porušení pravidel roleplaye</li>
+                        <li><strong>NVL (Not Valuing Your Life)</strong> - Povinnost chovat se jako by váš život měl hodnotu, včetně zákazu létání bez licence</li>
+                        <li><strong>Trash RP</strong> - Zákaz toxického chování, nadávání a opakovaného kazení RP ostatním</li>
+                        <li><strong>Gross RP</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Nutné získat povolení v OOC chatu ("ano")</li>
+                                <li>- Možnost požádat o zmírnění</li>
+                                <li>- Automaticky povoleno pro nelegální organizace</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">NonRP Injuries</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz pokračování v RP při vážných zraněních</li>
+                        <li>Zákaz bindování příkazů pro zranění</li>
+                        <li>Povinnost RP zranění po combat akci (obvázání, bezvědomí)</li>
+                        <div class="mt-2 text-gray-400">Příklad porušení: /do bouchl se do hlavy když jsi naboural do auta ve vysoké rychlosti a pak pokračuješ v jízdě.</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Hood Fear podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Respekt vůči členům hoodu</li>
+                        <li>Policisté by měli vstupovat v početnějších skupinách</li>
+                        <li>Zákaz nečekaných razií a hromadného zatýkání</li>
+                        <li>RP musí mít smysl, ne být jen honičkou</li>
+                        <li>Území gangu - anomálie jsou vnímány negativně</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Animal Fear podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Strach z neznámých/cizích zvířat</li>
+                        <li>Zákaz hlazení/interakce s cizími zvířaty</li>
+                        <li>Povinnost RP strachu ze psů K-9 a útočných plemen</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">VDM podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz používání vozidel k zabíjení bez důvodu</li>
+                        <div class="mt-2 text-gray-400">Příklady porušení:</div>
+                        <li>- Naražení do někoho na ulici bez důvodu</li>
+                        <li>- Nesmyslné pronásledování a bourání (kromě legitimního zastavování v RP)</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Cop Baiting podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz úmyslného provokování PD/SD</li>
+                        <div class="mt-2 text-gray-400">Příklady porušení:</div>
+                        <li>- Driftování a troubení před PD hlídkou</li>
+                        <li>- Jízda dokola kolem policejní stanice</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Opačný Metagaming</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz tlačit OOC informace do IC přes /do za účelem získání přiznání nebo jiných informací od osoby</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Combat Comeback podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Přísný zákaz návratu do RP po deathscreenu, platí pro všechny včetně PD</li>
+                        <li>Po použití combat-medic/EMS se musí postava stáhnout na ošetření</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Mixing podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz používání OOC informací v IC situacích</li>
+                        <li>Zákaz přenášení OOC vztahů do IC</li>
+                        <li>Zákaz OOC komunikace na serveru mimo příslušné tagy</li>
+                        <li>Zákaz používání herních přezdívek (Steam, Discord) v IC</li>
+                        <li>Zákaz sdílení kontaktů na základě OOC informací</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Metagaming podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz použití informací získaných mimo RP (OOC)</li>
+                        <li>Zákaz stream snipingu a využívání informací ze streamů</li>
+                        <li>Zákaz telekomunikace během RP (např. Discord hovory)</li>
+                        <li>Zákaz přenášení informací mezi postavami (multichar)</li>
+                        <li>Zákaz poznávání hráčů podle hlasu</li>
+                        <div class="mt-2 text-gray-400">Příklad porušení: Hráč napíše do chatu "Potřebujeme posily u banky" a jiný hráč, který nebyl poblíž a neslyšel žádnou komunikaci, se tam vydá.</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Combat Log podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz odpojení během/po RP akci (min. 15 minut po poslední interakci)</li>
+                        <div class="mt-2 text-gray-400">Příklad porušení: Byli jste uhozeni do bezvědomí a odpojíte se, aby vám ten, co vás uhodil, nic nevzal.</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Combat Escape podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz použití revivu v deadscreenu k vyhnutí se RP akci</li>
+                        <div class="mt-2 text-gray-400">Příklady porušení:</div>
+                        <li>- Unese vás nelegální skupina a použijete revive k útěku</li>
+                        <li>- Vykrádáte klenotnictví, IZS vás zpacifikuje a vy se portnete na EMS a utečete</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Pravidla pro přepadení</h3>
+                    <ul class="space-y-4">
+                        <li>Minimální počet lupičů: 4</li>
+                        <li>Minimální počet policistů: 4</li>
+                        <li>Zákaz přepadení bez předchozí přípravy (min. 30 minut)</li>
+                        <li>Povinnost použít maskování</li>
+                        <li>Zákaz opakovaného přepadení stejného místa do 2 hodin</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Pravidla pro únos</h3>
+                    <ul class="space-y-4">
+                        <li>Minimální doba únosu: 15 minut</li>
+                        <li>Povinnost RP komunikace s obětí</li>
+                        <li>Zákaz bezdůvodných únosů</li>
+                        <li>Zákaz únosu bez předchozího RP důvodu</li>
+                        <div class="mt-2 text-gray-400">Příklad správného únosu: Únos kvůli získání informací, výkupnému nebo pomstě s předchozím RP základem.</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Pravidla pro policejní zásahy</h3>
+                    <ul class="space-y-4">
+                        <li>Povinnost použití výstražných zařízení při honičce</li>
+                        <li>Zákaz střelby bez varování</li>
+                        <li>Povinnost dodržování postupů při zatýkání</li>
+                        <li>Zákaz nadměrného použití síly</li>
+                        <div class="mt-2 text-gray-400">Příklad správného postupu: "LSPD! Stůjte! Máte 3 vteřiny na zastavení vozidla!"</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Pravidla pro nemocniční RP</h3>
+                    <ul class="space-y-4">
+                        <li>Povinnost respektovat diagnózu lékaře</li>
+                        <li>Zákaz opuštění nemocnice bez propuštění</li>
+                        <li>Povinnost RP rekonvalescence po těžkých zraněních</li>
+                        <li>Zákaz agresivního chování v nemocnici</li>
+                        <div class="mt-2 text-gray-400">Příklad: Po střelném zranění je nutné strávit minimálně 30 minut v nemocnici a následně dodržovat klidový režim.</div>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">KOS (Kill On Sight)</h3>
+                    <ul class="space-y-4">
+                        <li>Zabití bez předchozí RP akce</li>
+                        <li>Zabití bez dostatečného RP důvodu a interakce</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Kill FX podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>FX modifikace jsou na serveru zakázané</li>
+                        <li>Zákaz On-hit FX</li>
+                        <li>Po změně pravidla máte 48h na přizpůsobení se změně</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Nelegal CK podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Boss nelegální frakce má právo udělit CK komukoliv ve frakci</li>
+                        <li>K schválení CK je potřeba mít RP důvod a ticket s screenshotem doerpeného CK</li>
+                        <li>CK může být uděleno za neaktivitu a po době 10h opuštění frakčního Discordu</li>
+                        <li>Pokud se hráč vyhýbá CK nebo se schovává, bude CK automaticky schváleno</li>
+                        <li>Narušitel musí na pozemek vstoupit sám a dobrovolně</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Majetkové CK</h3>
+                    <ul class="space-y-4">
+                        <li>CK za nelegitimní získání majetku (např. kupování majetku za OOC peníze)</li>
+                        <li>CK za zneužívání bugu pro zisk peněz</li>
+                        <li>Toto CK může udělit pouze A-Team</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Opuštění nelegální frakce</h3>
+                    <ul class="space-y-4">
+                        <li>Hráč nemůže opustit nelegální frakci bez CK</li>
+                        <li>Při vyhození bez důvodu je nutné napsat ticket</li>
+                        <li>Po CK se lze vrátit nejdříve po 7 dnech a to na nejnižší pozici</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Prodej frakce</h3>
+                    <ul class="space-y-4">
+                        <li>Prodej musí být oznámen A-Teamu v ticketu a schválen</li>
+                        <li>Frakci lze prodat nejdříve 7 dní po poslední změně majitele</li>
+                        <li>Žádání o frakci za účelem prodeje za IC peníze nebo její zneužívání se trestá banem</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Jail Fear podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Postava musí projevovat obavy z následků vězení:</li>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li>- Strach ze ztráty reputace</li>
+                            <li>- Obavy z odloučení od rodiny či přátel</li>
+                            <li>- Strach ze ztráty svobody</li>
+                        </ul>
+                        <li>Povinnost RPit strach z vězení a vysokých trestů</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Gang pravidla</h3>
+                    <ul class="space-y-4">
+                        <li>Veškerá pravidla ohledně gangu jsou na nelegálním Discord serveru Unlocked RP Nelegal</li>
+                        <li>Pro přístup k těmto pravidlům je nutné být členem nelegální organizace</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Battlefield a G-Signál</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Battlefield</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Zákaz zbytečného vyvolávání přestřelek</li>
+                                <li>Zákaz střelby bez důvodu</li>
+                            </ul>
+                        </li>
+                        <li><strong>G-Signál</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Signál první pomoci je povolen pouze v přítomnosti jiného hráče nebo NPC</li>
+                                <li>Rychlá akce - Možnost sehnat rukojmího v méně rozvinutých oblastech s vysokou kriminalitou</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Závěrečná ustanovení</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Jazyk RP</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Povinnost RPit primárně v CZ/SK</li>
+                                <li>Výjimka pro používání vět a slov ve frakci</li>
+                            </ul>
+                        </li>
+                        <li><strong>Souhlas s pravidly</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Povinnost souhlasit s pravidly a jejich změnami</li>
+                                <li>Doporučení pravidelně kontrolovat změny pravidel</li>
+                                <li>Neznalost pravidel neomlouvá</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Cheating podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz používání cheatů a modifikací dávajících nespravedlivou výhodu:
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Změny parametrů zbraní</li>
+                                <li>- Vylepšení ovládání vozidel</li>
+                                <li>- Vypínání kolizí</li>
+                                <li>- Odstranění textur</li>
+                                <li>- Makra usnadňující hru</li>
+                            </ul>
+                        </li>
+                        <li>Tresty:
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Okamžitý ban za použití cheatů nebo hacků</li>
+                                <li>- Ban za asociaci s cheaterem (braní naspawnovaných peněz)</li>
+                                <li>- Dlouhý ban a CK postavy za držení nelegitimně získaných itemů</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Zneužívání animací podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Přísný zákaz zneužívání animací v combatu i mimo něj</li>
+                        <li>Zákaz používání emotu /e sleep (trest: ban a strike na nelegální frakci)</li>
+                        <li>Zákaz používání nabídkových animací nebo příliš rychlých animací</li>
+                        <li>Výjimky:
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Schování v keři se nezahrnuje pod zákaz</li>
+                                <li>- Povoleno ležet na střeše a střílet (zákaz bugování na střechy pomocí emotu)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Ujíždění a střelba podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Omezení při ujíždění:
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Zákaz schování auta do garáže 10 minut po ujetí</li>
+                                <li>- Zákaz výměny auta z garáže během ujíždění</li>
+                                <li>- Zákaz zaměnění poškozeného auta za opravené</li>
+                            </ul>
+                        </li>
+                        <li>Střelba při ujíždění:
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Povoleno střílet po PD/SD po 3 minutách ujíždění</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Vykrádání</h3>
+                    <ul class="space-y-4">
+                        <li>Minimálně stejný počet PD/SD jako zločinců</li>
+                        <li>Rukojmí nesmí být NPC</li>
+                        <li>Max. $25,000 za rukojmího, $50,000 za člena IZS</li>
+                        <li>Zákaz vykrádání s offroad motorkou</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Doporučené animace pro RP</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Základní animace:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- /e crossarms - Zkřížené ruce (profesionální postoj)</li>
+                                <li>- /e lean - Opření se (casual postoj)</li>
+                                <li>- /e sit - Sezení</li>
+                                <li>- /e sitchair - Sezení na židli</li>
+                                <li>- /e think - Přemýšlení</li>
+                                <li>- /e smoke - Kouření</li>
+                            </ul>
+                        </li>
+                        <li><strong>Emoce a reakce:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- /e nod - Přikývnutí</li>
+                                <li>- /e no - Zavrtění hlavou</li>
+                                <li>- /e wave - Zamávání</li>
+                                <li>- /e salute - Salutování</li>
+                                <li>- /e surrender - Vzdání se</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pracovní animace:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- /e mechanic - Oprava vozidla</li>
+                                <li>- /e medic - Ošetřování</li>
+                                <li>- /e guard - Hlídkování</li>
+                                <li>- /e clipboard - Psaní poznámek</li>
+                                <li>- /e type - Psaní na klávesnici</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Doporučené pozadí pro RP postavu</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Základní informace o postavě:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Jméno a příjmení (realistické)</li>
+                                <li>- Věk (18-60 let)</li>
+                                <li>- Původ a background</li>
+                                <li>- Zaměstnání nebo životní cíl</li>
+                                <li>- Osobnostní rysy a charakteristiky</li>
+                            </ul>
+                        </li>
+                        <li><strong>Doporučené prvky příběhu:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Důvod příchodu do města</li>
+                                <li>- Rodinná historie</li>
+                                <li>- Traumata nebo významné životní události</li>
+                                <li>- Vztahy s ostatními postavami</li>
+                                <li>- Osobní cíle a ambice</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tipy pro vytvoření postavy:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Vyhněte se nerealistickým prvkům</li>
+                                <li>- Vytvořte komplexní osobnost s přednostmi i vadami</li>
+                                <li>- Dejte postavě prostor pro vývoj</li>
+                                <li>- Udržujte konzistentní chování</li>
+                                <li>- Respektujte herní svět a jeho pravidla</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="prikazy" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Herní příkazy</h2>
+            <div class="grid gap-6">
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">IC/OOC Komunikace podrobně</h3>
+                    <ul class="space-y-4">
+                        <li><strong>IC (In Character)</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Veškerá komunikace týkající se hraní postavy a jejího příběhu</li>
+                                <li>Vše, co se děje v rámci roleplaye a hry</li>
+                                <li>Výjimkou je řešení reportů</li>
+                            </ul>
+                        </li>
+                        <li><strong>OOC (Out Of Character)</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Komunikace, která není součástí hraní role</li>
+                                <li>Vše, co se týká skutečného světa a není součástí hry</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Herní příkazy podrobně</h3>
+                    <ul class="space-y-4">
+                        <li><strong>/do</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Používá se k popisu činností vyžadujících interakci s jiným hráčem</li>
+                                <li>Slouží k popisu prostředí či situace</li>
+                                <li>V /do se nesmí lhát</li>
+                                <div class="mt-2 text-gray-400">Příklad: /do bouchl se o volant a krvácí z nosu.</div>
+                            </ul>
+                        </li>
+                        <li><strong>/me</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Náhrada animací které ve hře nejsou</li>
+                                <div class="mt-2 text-gray-400">Příklad: /me vytahuje kapesníček z kapsy a utírá si krev.</div>
+                            </ul>
+                        </li>
+                        <li><strong>/doc</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Příkaz pro odpočet času činnosti</li>
+                                <div class="mt-2 text-gray-400">Příklad: /doc 5 ..</div>
+                            </ul>
+                        </li>
+                        <li><strong>/try</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Pro náhodný výsledek akce</li>
+                                <li>Zákaz manipulace s výsledkem</li>
+                                <div class="mt-2 text-gray-400">Příklad: /do Je mu lépe? /try.</div>
+                            </ul>
+                        </li>
+                        <li><strong>/stav</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Používán k popisu stavu postavy</li>
+                                <div class="mt-2 text-gray-400">Příklad: /stav má obvázané rameno.</div>
+                            </ul>
+                        </li>
+                        <li><strong>/ad</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Příkaz pro reklamy legálních frakcí a jejich aktivit</li>
+                                <li>Pro oznámení informací o veřejné nabídce nebo události</li>
+                                <li>Nesmí být použito k propagaci nelegálních činností</li>
+                                <div class="mt-2 text-gray-400">Příklad: /ad Hayes OPEN, postal 670.</div>
+                            </ul>
+                        </li>
+                        <li><strong>/report</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>Slouží k odeslání zprávy administrátorům</li>
+                                <li>Nutné uvést důvod a všechna porušená pravidla</li>
+                                <li>Povinnost použít správnou kategorii reportu</li>
+                                <li>Při nesprávné kategorizaci hrozí napomenutí od AT</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="combat" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Combat pravidla</h2>
+            <div class="grid gap-6">
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Základní combat pravidla</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Combat Log</strong> - Zákaz odpojení během/po RP akci (min. 15 minut)</li>
+                        <li><strong>Combat Escape</strong> - Zákaz použití revivu k úniku z RP</li>
+                        <li><strong>Combat Comeback</strong> - Zákaz návratu do RP po deathscreenu</li>
+                        <li><strong>VDM</strong> - Zákaz používání vozidel k zabíjení bez důvodu</li>
+                        <li><strong>RDM</strong> - Zákaz náhodného zabíjení bez RP důvodu</li>
+                        <li><strong>Kill FX</strong> - Zákaz používání FX modifikací</li>
+                        <li><strong>Revenge Kill</strong> - Po PK není možné provést revenge kill po dobu minimálně 5 hodin z důvodu částečné/celé ztráty paměti</li>
+                        <li><strong>Battlefield</strong> - Zákaz zbytečného vyvolávání přestřelek nebo střelby bez důvodu</li>
+                        <li><strong>G-Signál</strong> - Signál první pomoci je povolen pouze, pokud je v blízkosti jiný hráč nebo NPC</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Cheating a podvádění</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz používání jakýchkoliv cheatů nebo modifikací dávajících nespravedlivou výhodu</li>
+                        <li>Zákaz změn parametrů zbraní, vylepšení ovládání vozidel, vypínání kolizí nebo odstranění textur</li>
+                        <li>Zákaz používání maker usnadňujících hru</li>
+                        <li>Použití cheatů nebo hacků vede k okamžitému banu</li>
+                        <li>Asociace s cheaterem (braní naspawnovaných peněz atd.) se také trestá banem</li>
+                        <li>Držení velkého množství nelegitimně získaných itemů může vést k dlouhému banu a CK postavy</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Injuries a NonRP Injuries</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz pokračování v RP při vážných zraněních</li>
+                        <li>Zákaz bindování příkazů pro zranění</li>
+                        <li>Povinnost RP zranění po combat akci</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Looting podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz lootingu státních složek (výjimky: náboje a léčící prostředky)</li>
+                        <li>Zákaz RP akcí za účelem lootu</li>
+                        <li>Zákaz lootování na neutrálních lokacích (detektor kovu, poklady, hornictví)</li>
+                        <li>Zákaz nelegálních akcí v podnicích bez schválení ticketem</li>
+                        <li>Zákaz lootování aut - nelze jen přijít a vzít vše</li>
+                        <li><strong>Rychlá akce:</strong> Možnost sehnat rukojmí v méně rozvinutých oblastech s vysokou kriminalitou</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="special" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Speciální pravidla</h2>
+            <div class="grid gap-6">
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">PT (Peace Time)</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz nelegálních činností během PT</li>
+                        <li>PT vyhlašuje člen AT</li>
+                        <li>PT nastává automaticky, když není na serveru žádný člen PD/SD</li>
+                        <li>PT je automaticky 15 minut před a po restartu serveru</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Přepadávání a Unášení</h3>
+                    <ul class="space-y-4">
+                        <li>Maximální doba únosu: 1h (lze prodloužit s domluvou v ooc chatu)</li>
+                        <li>Zákaz nucení k výběru peněz z účtu nebo přepisu auta</li>
+                        <li>Maximální výkupné za IZS složky: $50,000</li>
+                        <li>NEEXISTUJE VÝMĚNA ZBRANÍ ZA RUKOJMÉHO</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Vykrádání</h3>
+                    <ul class="space-y-4">
+                        <li>Minimálně stejný počet PD/SD jako zločinců</li>
+                        <li>Rukojmí nesmí být NPC</li>
+                        <li>Max. $25,000 za rukojmího, $50,000 za člena IZS</li>
+                        <li>Zákaz vykrádání s offroad motorkou</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">LSPD/SD a Cayo Perico</h3>
+                    <ul class="space-y-4">
+                        <li>LSPD/SD mají zákaz vstupu na Cayo Perico</li>
+                        <li>Zákaz vstupu do vzdušného prostoru Cayo Perico</li>
+                        <li>Porušení je trestáno banem</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Ujíždění a Střelba</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz schování auta do garáže 10 minut po ujetí</li>
+                        <li>Zákaz výměny auta z garáže během ujíždění</li>
+                        <li>Možnost střelby po PD/SD při ujíždění delším než 3 minuty</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">CPZ a Zadržení</h3>
+                    <ul class="space-y-4">
+                        <li>Maximální doba zadržení v CPZ: 24 hodin reálného času</li>
+                        <li>Možnost prodloužení po OOC domluvě</li>
+                        <li>Zákaz zadržení bez řešení</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Další důležitá pravidla</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Zneužívání animací:</strong> Přísný zákaz zneužívání animací v combatu</li>
+                        <li><strong>Třetí strana:</strong> Zákaz zapojování se do konfliktu dvou stran (výjimka: LSPD/SD)</li>
+                        <li><strong>Vypalování budov:</strong> Nutná předchozí RP akce a schválení A-Teamem</li>
+                        <li><strong>Nelegální lokace:</strong> Interakce není nutná při 3+ hráčích, priorita RP</li>
+                        <li><strong>Raid:</strong> Nutné schválení A-Teamem přes ticket</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Situační CK podrobně</h3>
+                    <ul class="space-y-4">
+                        <li>Situace vzniklá nepředvídatelným způsobem (hráč musí s tímto CK souhlasit)</li>
+                        <li>Po proběhlé RP akci je nutné založit ticket o Self-CK</li>
+                        <li>Ideálně doložit screenshot nebo klip z události</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Brigádníci ve frakcích</h3>
+                    <ul class="space-y-4">
+                        <li>Možnost mít 3 brigádníky v nelegální frakci</li>
+                        <li>Brigádníci se nesmí účastnit žádných akcí</li>
+                        <li>Nepočítají se do limitu 19 členů + 1 Boss</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Toxické chování</h3>
+                    <ul class="space-y-4">
+                        <li>Toxické chování na Discordu může vést k banu i ve hře</li>
+                        <li>Zákaz extrémní vulgarity a diskriminace</li>
+                        <li>Zákaz spamu a nevhodného chování</li>
+                        <li>Zákaz NSFW materiálu</li>
+                        <li>Zákaz reklam bez povolení (role Streamer/Content Creator)</li>
+                        <li>Zákaz server raidingu</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Aukce a bugy</h3>
+                    <ul class="space-y-4">
+                        <li>Přihazování peněz, které nemáte, se trestá banem až na týden</li>
+                        <li>Povinnost nahlásit nalezené bugy</li>
+                        <li>Zákaz zneužívání bugů</li>
+                        <li>Zneužití bugu pro získání majetku vede k odebrání veškerého majetku</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="frakcni" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Frakční pravidla</h2>
+            <div class="grid gap-6">
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Počet členů a struktura</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Legální a neutrální frakce:</strong> Bez omezení počtu členů</li>
+                        <li><strong>Nelegální frakce:</strong> Max. 19 členů + 1 Boss, možnost 3 brigádníků (nemohou na akce)</li>
+                        <li>Maximálně 1 spojenectví pro nelegální frakce</li>
+                        <li>Max. 3 adminů v jedné frakci</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Character Kill (CK)</h3>
+                    <ul class="space-y-4">
+                        <li>Nutnost schválení A-Teamem</li>
+                        <li>Boss nelegální frakce může udělit CK členům</li>
+                        <li>Situační CK vyžaduje souhlas hráče</li>
+                        <li>Po CK návrat do frakce nejdříve po 7 dnech</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">IC Informace a dokumentace</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Fotografie a screenshoty:</strong>
+                            <ul class="ml-4 mt-2 space-y-2">
+                                <li>- Fotky cizích aut, osob a nemovitostí musí být pořízeny IC způsobem</li>
+                                <li>- Screenshoty pouze pro mapu nebo dokumentaci výroby</li>
+                            </ul>
+                        </li>
+                        <li><strong>Frakční Discord:</strong> Povinnost mít člena staffu s admin právy</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section p-6">
+                    <h3 class="text-xl font-semibold mb-4">Pravidla charakteru</h3>
+                    <ul class="space-y-4">
+                        <li>Zákaz více postav ve stejné frakci</li>
+                        <li>Max. 1 postava v nelegálních organizacích</li>
+                        <li>Limit vlastnictví: 1 frakce i s více postavami</li>
+                        <li>Zákaz komunikace mezi vlastními postavami</li>
+                        <li>Zákaz převodu majetku mezi postavami</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="discord" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Discord pravidla</h2>
+            <div class="rule-section p-6">
+                <ul class="space-y-4">
+                    <li>Zákaz extrémní vulgarity a diskriminace</li>
+                    <li>Zákaz spamu a nevhodného chování</li>
+                    <li>Zákaz NSFW materiálu</li>
+                    <li>Zákaz reklam bez povolení (role Streamer/Content Creator)</li>
+                    <li>Zákaz server raidingu</li>
+                    <li>Povinnost RPit primárně v CZ/SK</li>
+                </ul>
+            </div>
+
+            <div class="rule-section p-6">
+                <h3 class="text-xl font-semibold mb-4">Závěrečná pravidla</h3>
+                <ul class="space-y-4">
+                    <li><strong>RP jazyk:</strong> Povinnost RPit primárně v CZ/SK</li>
+                    <li><strong>Bugy:</strong> Povinnost nahlásit, zákaz zneužívání</li>
+                    <li><strong>Jména:</strong> Zákaz používání Steam/Discord jmen ve hře</li>
+                    <li><strong>Aukce:</strong> Zákaz přihazování peněz, které nemáte (ban až týden)</li>
+                    <li><strong>Zneužití bugů:</strong> Vede k odebrání veškerého majetku</li>
+                    <li>Souhlas s pravidly a jejich změnami je povinný</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 p-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Nova RP. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+</body>
+</html> 
